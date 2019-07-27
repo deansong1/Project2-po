@@ -7,7 +7,7 @@
 .head>span>a{
     font-size:30px;
     width: 83px;height: 20px;
-    text-decoration: none;
+    text-decoration:none;
     line-height: 60px;
     overflow: hidden;
     font-family: "OPPOFont-Regular";
@@ -38,12 +38,31 @@
     float:right;
     border-radius: 3px;
     margin-top:16px;
+    position: relative;
 }
-.r_head>div{
-    width: 8px;height: 6px;
-    margin: 5px 4px;
+.r_head>a{
+    display:block;
+    width: 10px;height: 8px;
+    margin: 5px 3px;
     border:2px solid #000;
     border-radius:50%;
+}
+.r_head>ul{
+    display:none;
+    position: absolute;
+    top:30px;
+    right:-70px;
+    list-style: none;
+    width: 150px;height: 180px;
+    border:2px solid #000;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 60px;
+}
+.r_head>ul a{
+    text-decoration: none;
+    font-size: 15px;
+    color:#333;
 }
 @media(min-width:1440px){
     .head{
@@ -108,5 +127,18 @@
         border-radius: 50%;
         display: block;
         margin-top:16px;        
+    }
+
+.r_head>ul{
+        display:none;
+        position: absolute;
+        top:30px;
+        right:-3px;
+        list-style: none;
+        width:500px;;height: 180px;
+        border:2px solid #000;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 60px;
     }
 }

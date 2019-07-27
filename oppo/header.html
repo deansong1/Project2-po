@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>oppo header</title>
   <script src="js/vue.js"></script>
   <link rel="stylesheet" href="css/header.css">
   <style>
@@ -40,10 +40,10 @@
                         <li>
                             <a href="">
                             <img src="image/1.png" alt="">
-                            <h3>Find x</h3>
+                            <h3>Reno 10</h3>
                             </a>
                         </li>
-                        <li><a href=""><img src="image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
+                        <li><a href=""><img src="image/2.png" alt=""><h3>Reno z</h3></a></li>
                         
                     </ul>
                 </li>
@@ -53,11 +53,11 @@
                             <li>
                                 <a href="">
                                 <img src="image/1.png" alt="">
-                                <h3>Find x</h3>
+                                <h3>R 17</h3>
                                 </a>
                             </li>
-                            <li><a href=""><img src="image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
+                            <li><a href=""><img src="image/2.png" alt=""><h3>R17 PRO</h3></a></li>
+                            <li><a href=""><img src="image/3.png" alt=""><h3>R15 X</h3></a></li>
                         </ul>
                 </li>
                 <li>
@@ -73,11 +73,11 @@
                             <li>
                                 <a href="">
                                 <img src="image/1.png" alt="">
-                                <h3>Find x</h3>
+                                <h3>K3</h3>
                                 </a>
                             </li>
-                            <li><a href=""><img src="image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
+                            <li><a href=""><img src="image/2.png" alt=""><h3>K1</h3></a></li>
+                            <li><a href=""><img src="image/3.png" alt=""><h3>Find M</h3></a></li>
                             <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
                         </ul>
                 </li>
@@ -92,7 +92,7 @@
                             </li>
                             <li><a href=""><img src="image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
                             <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
+                            <li><a href=""><img src="image/3.png" alt=""><h3>Find</h3></a></li>
                             <li>
                                     <a href="">
                                     <img src="image/1.png" alt="">
@@ -109,16 +109,35 @@
             </span>
         </div>
         <div class="r_head">
-            <div></div>
+            <a data-trigger="r_head" href="javascript:;"></a>
+            <ul class="dropdown">
+                <li><a href="javascript:;">购物车</a></li>
+                <hr>
+                <li><a href="javascript:;">个人中心</a></li>
+                <hr>
+                <li><a href="javascript:;">登录</a></l>
+            </ul>
         </div>
     </div>
     <div class="right"></div>
 </div>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+$("[data-trigger=r_head]").click(function(e){
+    e.preventDefault();
+    var $btn=$(this);
+    var $ul=$btn.next();
+    if ($ul.is(":hidden")) {
+        $ul.show();
+    } else {
+        $ul.hide();
+    }
+})
+</script>
 <script>
 var vm=new Vue({
   el:"#app",
   data:{
-    
   }
 })
 </script>
