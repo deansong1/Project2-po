@@ -62,6 +62,7 @@
 .r_head>ul a{
     text-decoration: none;
     font-size: 15px;
+    font-weight:bold;
     color:#333;
 }
 @media(min-width:1440px){
@@ -89,6 +90,7 @@
         top:100px;
         left:100px;
         background:#fff;
+        transition:all .5s ease;
     }
     .navishow li:nth-child(1) img,.navishow li:nth-child(2) img,.navishow li:nth-child(3) img,.navishow li:nth-child(4) img,
     .navishow li:nth-child(5) img{width:150px;height: 120px;}
@@ -108,9 +110,29 @@
         padding: 0 10px;
         text-align:center;
     }
+    .navishow{
+        display:none;
+    } 
+    .head_mid>ul>li:hover .navishow{
+        display:block; 
+        width:100%;
+        margin:0 auto;
+        list-style: none;
+        display: flex;
+        text-align: center;
+        position: absolute;
+        top:100px;
+        left:-150px;
+        background:#fff;
+        transition:all .5s ease;
+    }
+    .navishow li:nth-child(1) img,.navishow li:nth-child(2) img,.navishow li:nth-child(3) img,.navishow li:nth-child(4) img,
+    .navishow li:nth-child(5) img{width:150px;height: 120px;}
+
 }
 @media(max-width:767px){
-.mark{display: block;
+.mark{
+        display: block;
         font-size:30px;
         line-height: 60px;
         text-align: center;
@@ -135,7 +157,7 @@
         top:30px;
         right:-3px;
         list-style: none;
-        width:500px;;height: 180px;
+        width:700px;;height: 180px;
         border:2px solid #000;
         border-radius: 4px;
         text-align: center;

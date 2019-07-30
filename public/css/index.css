@@ -1,0 +1,19 @@
+/* 3个横向图 */
+@media(min-width:1440px){
+    .main div img{
+        display: block;
+        width: 1200px;
+        height:660px;
+        margin:0 auto; 
+        position: relative;
+    }
+    .phone1 ul{
+        width: 600px;
+        height: 330px;
+        position:absolute;
+        top:200px;
+        left:1000px;
+    }
+    .phone1 ul li{list-style: none;}
+  
+} 
