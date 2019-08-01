@@ -47,11 +47,10 @@
         display: flex;
         margin:0 auto;
     }
-    .Mid div img{
+    .Mid img{
        width: 580px;
-       height: 440px;
-       
-   }
+       height: 440px;   
+    }
    .Mid>div{
        margin:18.75px;
     }
@@ -86,7 +85,6 @@
         text-align: center;
         margin:100px 0; 
     }
-   
 } 
 @media(max-width:768px){
     .main div{ 
