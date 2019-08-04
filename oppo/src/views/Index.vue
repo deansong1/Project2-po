@@ -1,333 +1,163 @@
 <template>
-  <div>
-    <my-header/>
-    <main id="main" class="container">
-      <carousel/>
-      <div>
-        <h3 class="pb-3" id="f1">
-          <nav class="navbar navbar-light border-bottom border-secondary pb-0 mb-2">
-            <a class="navbar-brand" href="#">
-              <img src="img/index/computer_icon.png" class="d-inline-block align-top" alt="">
-              首页推荐 / 1F
-            </a>
-          </nav>
-          <div class="row mb-2">
-            <div id="p1" class="col-md-7">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-2" v-text="p1.title"></h5>
-                  <h6 class="mb-5">
-                    <a class="text-dark" href="javascript:;" v-text="p1.details"></a>
-                  </h6>
-                  <span class="text-primary" v-text="`¥${p1.price.toFixed(2)}`"></span>
-                  <router-link class="btn btn-primary" :to="`/details/${p1.href.split('=')[1]}`">查看详情</router-link>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" :src="p1.pic" data-holder-rendered="true">
-              </div>
+<div>
+    <header1/>
+    <div class="main">
+        <!-- 横向图 -->
+        <div class="phone1">
+            <ul>
+                <li><h3>OPPO K3</h3></li>
+                <li><h4>8G+256G，骁龙 710</h4></li>
+                <li>...</li>
+                <li class="myprice">￥2290</li>
+                <li><a href="">立即购买</a></li>
+            </ul>
+        </div>
+        <div class="phone2">
+            
+            <ul>
+                <li><h3>OPPO K3</h3></li>
+                <li><h4>8G+256G，骁龙 710</h4></li>
+                <li>...</li>
+                <li class="myprice">￥2290</li>
+                <li><a href="">立即购买</a></li>
+            </ul>
+        </div>
+        <div class="phone3">
+            
+            <ul>
+                <li><h3>OPPO K3</h3></li>
+                <li><h4>8G+256G，骁龙 710</h4></li>
+                <li>...</li>
+                <li class="myprice">￥2290</li>
+                <li><a href="">立即购买</a></li>
+            </ul>
+        </div>
+    <!-- 中部图 -->
+        <div class="Mid">
+            <div>
+                <ul>
+                    <li><img src="image/mid1.jpg" class="img1"></li>
+                    <li>...</li>
+                    <li>Reno Z</li>
+                    <li>8G+128G，支持NFC</li>
+                    <li>￥2299</li>
+                </ul>
             </div>
-            <div class="col-md-5 pl-0">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-2" v-cloak>{{p2.title}}</h5>
-                  <h6 class="mb-5">
-                    <a class="text-dark" href="javascript:;" v-cloak>{{p2.details}}</a>
-                  </h6>
-                  <span class="text-primary" v-cloak>¥{{p2.price.toFixed(2)}}</span>
-                  <router-link class="btn btn-primary" :to="`/details/${p2.href.split('=')[1]}`">查看详情</router-link>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block mt-5" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" :src="p2.pic" data-holder-rendered="true">
-              </div>
+            <div>
+                <ul>
+                    <li><img src="image/mid2.jpg" class="img2"></li>
+                    <li>...</li>
+                    <li>A9</li>
+                    <li>6G+128G丨4020mAh大电池</li>
+                    <li>￥1699</li>
+                </ul>
             </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-5">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-3" v-text="p3.title"></h5>
-                  <span class="text-primary" v-cloak>¥{{p3.price.toFixed(2)}}</span>
-                  <router-link class="btn btn-primary" :to="`/details/${p3.href.split('=')[1]}`">查看详情</router-link>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block mt-5" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" :src="p3.pic" data-holder-rendered="true">
-              </div>
+        </div>   
+        <div class="Mid">
+            <div>
+                <ul>
+                    <li><img src="image/mid3.jpg" alt="" class="img3"></li>
+                    <li>...</li>
+                    <li>A9x</li>
+                    <li>4800万像素 | VOOC 3.0</li>
+                    <li>￥1999</li>
+                </ul>
             </div>
-            <div class="col-md-7 pl-0">
-              <div class="row pr-3">
-                <div v-for="(p,i) of arr" :key="i"  class="col-md-4 p-0 pl-2">
-                  <div class="card border-0 text-center">
-                    <img class="card-img-top" :src="p.pic" alt="Card image cap">
-                    <div class="card-body p-0 pr-1 pl-1">
-                      <span class="d-inline-block" v-text="p.title"></span>
-                      <span class="text-primary small" v-cloak>¥{{p.price.toFixed(2)}}</span>
-                      <router-link class="btn btn-primary" :to="`/details/${p.href.split('=')[1]}`">查看详情</router-link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div>
+                <ul>
+                    <li><img src="image/mid4.jpg" class="img4"></li>
+                    <li>...</li>
+                    <li>K1</li>
+                    <li>6G+64G | 屏幕指纹</li>
+                    <li>￥1399</li>
+                </ul>
             </div>
-          </div>
-        </h3>
-        <h3 class="pb-3">
-          <nav class="navbar navbar-light border-bottom border-secondary pb-0 mb-2">
-            <a class="navbar-brand" href="#">
-              <img src="img/index/computer_icon.png" class="d-inline-block align-top" alt="">
-              最新上架 / 2F
-            </a>
-          </nav>
-          <div class="row mb-2">
-            <div class="col-md-7">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-2">Apple MacBook Air系列</h5>
-                  <h6 class="mb-5">
-                    <a class="text-dark" href="javascript:;">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</a>
-                  </h6>
-                  <span class="text-primary">¥6988.00</span>
-                  <a class="btn btn-primary" href="product_details.html?lid=1">查看详情</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="img/index/study_computer_img1.png" data-holder-rendered="true">
-              </div>
+        </div> 
+    <!-- 底部导航栏 -->
+    <div id="other">
+           <span>配件</span>          
+                <ul>
+                    <li>推荐</li>
+                    <li>耳机</li>
+                    <li>数据线/适配器</li>
+                    <li>移动电源</li>
+                    <li>超值套餐</li>
+                    <li>保护壳</li>
+                    <li>其它</li>
+                </ul>          
+    </div>
+  <!-- 底部图 -->
+        <div class="bottom">
+            <div class="other1">
+                <ul>
+                    <li>
+                        <img src="image/gaoda.jpg" class="pag1">
+                    </li>
+                    <li>
+                        <img src="image/配件区/ear.png" class="pag2">
+                        <h4>闪充电源适配器</h4>
+                        <h5>¥79</h5>
+                    </li>
+                    <li>
+                        <img src="image/配件区/shelf.png" class="pag3">
+                        <h4>三脚架蓝牙自拍杆</h4>
+                        <h5>¥119</h5>
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-5">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-2">小米Air 金属超轻薄</h5>
-                  <h6 class="mb-5">
-                    <a class="text-dark" href="javascript:;">酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡</a>
-                  </h6>
-                  <span class="text-primary">¥3488.00</span>
-                  <a class="btn btn-primary" href="product_details.html?lid=5">查看详情</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block mt-5" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="img/index/study_computer_img2.png" data-holder-rendered="true">
-              </div>
+           
+            <div class="other2">
+                <ul class="electric">
+                    <li>
+                        <img src="image/配件区/charge.png" class="pag2">
+                        <h4>闪充电源适配器</h4>
+                        <h5>¥79</h5>
+                    </li>
+                    <li>
+                        <img src="image/配件区/earpods.png" class="pag2">
+                        <h4>闪充电源适配器</h4>
+                        <h5>¥79</h5>
+                    </li>
+                    <li>
+                        <img src="image/配件区/electric.png" class="pag2">
+                        <h4>闪充电源适配器</h4>
+                        <h5>¥79</h5>
+                    </li>
+                    <li>
+                        <img src="image/配件区/usb.png" class="pag2">
+                        <h4>闪充电源适配器</h4>
+                        <h5>¥79</h5>
+                    </li>
+                </ul>
             </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-5">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-3">联想E480C 轻薄系列</h5>
-                  <span class="text-primary">¥5399.00</span>
-                  <a class="btn btn-primary" href="product_details.html?lid=9">查看详情</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block mt-5" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="img/index/study_computer_img3.png" data-holder-rendered="true">
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="row pr-3">
-                <div class="col-md-4 p-0 pl-2">
-                  <div class="card border-0 text-center">
-                    <img class="card-img-top" src="img/index/study_computer_img4.png" alt="Card image cap">
-                    <div class="card-body p-0 pr-1 pl-1">
-                      <span class="d-inline-block">华硕RX310 金属超极本</span>
-                      <span class="text-primary small">¥4966.00</span>
-                      <a class="btn btn-sm btn-primary" href="product_details.html?lid=13">查看详情</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 pl-2">
-                  <div class="card border-0 text-center">
-                    <img class="card-img-top" src="img/index/study_computer_img5.png" alt="Card image cap">
-                    <div class="card-body p-0 pr-1 pl-1">
-                      <span class="d-inline-block">联想小新700 电竞版游戏本</span>
-                      <span class="text-primary small">¥6299.00</span>
-                      <a class="btn btn-sm btn-primary" href="product_details.html?lid=17">查看详情</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 pl-2">
-                  <div class="card border-0 text-center">
-                    <img class="card-img-top" src="img/index/study_computer_img3.png" alt="Card image cap">
-                    <div class="card-body p-0 pr-1 pl-1">
-                      <span class="d-inline-block">戴尔灵越燃7000 轻薄窄边</span>
-                      <span class="text-primary small">¥5199.00</span>
-                      <a class="btn btn-sm btn-primary" href="product_details.html?lid=19">查看详情</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </h3>
-        <h3 class="pb-3">
-          <nav class="navbar navbar-light border-bottom border-secondary pb-0 mb-2">
-            <a class="navbar-brand" href="#">
-              <img src="img/index/computer_icon.png" class="d-inline-block align-top" alt="">
-              热销单品 / 3F
-            </a>
-          </nav>
-          <div class="row mb-2">
-            <div class="col-md-7">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-2">Apple MacBook Air系列</h5>
-                  <h6 class="mb-5">
-                    <a class="text-dark" href="javascript:;">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</a>
-                  </h6>
-                  <span class="text-primary">¥6988.00</span>
-                  <a class="btn btn-primary" href="product_details.html?lid=1">查看详情</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="img/index/study_computer_img1.png" data-holder-rendered="true">
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-2">小米Air 金属超轻薄</h5>
-                  <h6 class="mb-5">
-                    <a class="text-dark" href="javascript:;">酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡</a>
-                  </h6>
-                  <span class="text-primary">¥3488.00</span>
-                  <a class="btn btn-primary" href="product_details.html?lid=5">查看详情</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block mt-5" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="img/index/study_computer_img2.png" data-holder-rendered="true">
-              </div>
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-5">
-              <div class="card border-0 flex-md-row box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h5 class="d-inline-block mb-3">联想E480C 轻薄系列</h5>
-                  <span class="text-primary">¥5399.00</span>
-                  <a class="btn btn-primary" href="product_details.html?lid=9">查看详情</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block mt-5" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="img/index/study_computer_img3.png" data-holder-rendered="true">
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="row pr-3">
-                <div class="col-md-4 p-0 pl-2">
-                  <div class="card border-0 text-center">
-                    <img class="card-img-top" src="img/index/study_computer_img4.png" alt="Card image cap">
-                    <div class="card-body p-0 pr-1 pl-1">
-                      <span class="d-inline-block">华硕RX310 金属超极本</span>
-                      <span class="text-primary small">¥4966.00</span>
-                      <a class="btn btn-sm btn-primary" href="product_details.html?lid=13">查看详情</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 pl-2">
-                  <div class="card border-0 text-center">
-                    <img class="card-img-top" src="img/index/study_computer_img5.png" alt="Card image cap">
-                    <div class="card-body p-0 pr-1 pl-1">
-                      <span class="d-inline-block">联想小新700 电竞版游戏本</span>
-                      <span class="text-primary small">¥6299.00</span>
-                      <a class="btn btn-sm btn-primary" href="product_details.html?lid=17">查看详情</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 p-0 pl-2">
-                  <div class="card border-0 text-center">
-                    <img class="card-img-top" src="img/index/study_computer_img3.png" alt="Card image cap">
-                    <div class="card-body p-0 pr-1 pl-1">
-                      <span class="d-inline-block">戴尔灵越燃7000 轻薄窄边</span>
-                      <span class="text-primary small">¥5199.00</span>
-                      <a class="btn btn-sm btn-primary" href="product_details.html?lid=19">查看详情</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </h3>
-      </div>
-      <ul class="nav nav-pills nav-fill mb-3">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="img/footer/icon1.png">
-            <h6 class="text-muted">品质保障</h6>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="img/footer/icon2.png">
-            <h6 class="text-muted">私人订制</h6>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="img/footer/icon3.png">
-            <h6 class="text-muted">学员特供</h6>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="img/footer/icon4.png">
-            <h6 class="text-muted">专属特权</h6>
-          </a>
-        </li>
-      </ul>
-      <div class="btn-group-vertical position-fixed" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">首页<br>推荐</button>
-        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">最新<br>上架</button>
-        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">热销<br>单品</button>
-      </div>
-    </main>
-  </div>
+    
+    </div>
+</div>
+    <footer1/>
+</div>
 </template>
+
+<script src="js/jquery-1.11.3.js"></script>
 <script>
-import Carousel from "@/components/Carousel"
-//@是src/的简写
+$("[data-trigger=r_head]").click(function(e){
+    e.preventDefault();
+    var $btn=$(this);
+    var $ul=$btn.next();
+    if ($ul.is(":hidden")) {
+        $ul.show();
+    } else {
+        $ul.hide();
+    }
+})
+</script>
+<script>
 
 export default {
-  data(){
-    return {
-      p1:{price:0, href:""},
-      p2:{price:0, href:""},
-      p3:{price:0, href:""},
-      arr:[]
-    }
-  },
-  components:{Carousel},
-  created(){
-    this.axios.get(//异步: mounted才不会等ajax请求回来！
-      "http://localhost:5050/index"
-    ).then(result=>{
-      var [p1, p2, p3]=result.data;
-      this.p1=p1;
-      this.p2=p2;
-      this.p3=p3;
-      this.arr=result.data.slice(3);
-    })
-  }
+  
 }
 </script>
-<style scoped>
-/*定制每层楼中每张商品图片的大小*/
-#main>div:nth-child(2)>h3>div:nth-child(2)>div:first-child img{
-  margin-left:-200px; 
-  height: 250px;
-}
-#main>div:nth-child(2)>h3>div:nth-child(2)>div:last-child img{
-  margin-left:-150px; 
-  height: 200px;
-}
-#main>div:nth-child(2)>h3>div:nth-child(3)>div:first-child img{
-  margin-left:-100px; 
-  height: 150px;
-}
-#main>div:nth-child(2)>h3>div:nth-child(3)>div:first-child img{
-  margin-left:-100px; 
-  height: 150px;
-}
-#main>div:nth-child(2)>h3>div:nth-child(3)>div:last-child .card-img-top{
-  height:95px;
-}
-#main>div:nth-child(2)>h3>div:nth-child(3)>div:last-child .card-body>span:first-child{
-  font-size:.2em;
-}
-/*定制每张商品卡片的背景色*/
-#main>div:nth-child(2)>h3 .card{
-  background-color:#e8e8e8;
-}
-/*定制电梯按钮的样式*/
-#main>.btn-group-vertical{
-  top:100px;
-  left:10px;
-}
-#main>.btn-group-vertical>.btn-secondary:hover {
-  background-color: #e4393c;
-  border-color: #e4393c;
-}
-</style>
 
+<style>
+@import url("../assets/css/index.css");
+
+</style>
