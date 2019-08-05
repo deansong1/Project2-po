@@ -32,7 +32,7 @@
     text-decoration: none;
     color:#000; 
 }
-
+/* 购物车及登陆栏 */
 .r_head{
     width: 20px;height: 22px;
     border:2px solid #000;
@@ -49,7 +49,6 @@
     border-radius:50%;
 }
 .r_head>ul{
-    display:none;
     position: absolute;
     top:30px;
     right:-70px;
@@ -59,7 +58,10 @@
     border-radius: 4px;
     text-align: center;
     line-height: 60px;
+    padding: 0;
+    background:#fff;
 }
+.r_head ul hr{margin:0;}
 .r_head>ul a{
     text-decoration: none;
     font-size: 15px;
@@ -127,7 +129,6 @@
         top:100px;
         left:-150px;
         background:#fff;
-        transition:all .5s ease;
     }
     .navishow li:nth-child(1) img,.navishow li:nth-child(2) img,.navishow li:nth-child(3) img,.navishow li:nth-child(4) img,
     .navishow li:nth-child(5) img{width:150px;height: 120px;}
@@ -162,7 +163,7 @@
     }
 
 .r_head>ul{
-        display:none;
+        
         position: absolute;
         top:30px;
         right:-3px;

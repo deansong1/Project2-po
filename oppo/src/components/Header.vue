@@ -97,8 +97,8 @@
             </span>
         </div>
         <div class="r_head">
-            <a data-trigger="r_head" href="javascript:;"></a>
-            <ul class="dropdown">
+            <a href="javascript:;" @click="trigger"></a>
+            <ul class="dropdown" v-show="Isshow==false">
                 <li><a href="javascript:;">购物车</a></li>
                 <hr>
                 <li><a href="javascript:;">个人中心</a></li>
@@ -110,21 +110,25 @@
     <div class="right"></div>
     </header>
 </template>
-<script src="../components/jquery-1.11.3.js"></script>
-<script>$("[data-trigger=r_head]").click(function(e){
-    e.preventDefault();
-    var $btn=$(this);
-    var $ul=$btn.next();
-    if ($ul.is(":hidden")) {
-        $ul.show();
-    } else {
-        $ul.hide();
-    }
-})</script>
+
 <script>
 
 export default {
-  
+    data(){
+        return{
+            Isshow:true
+        }
+    },
+    methods:{
+        trigger(){
+            if (this.Isshow==true) {
+                 this.Isshow=false;
+            } else {
+                this.Isshow=true;
+            }
+           
+        }
+    }
 }
 </script>
 <style>

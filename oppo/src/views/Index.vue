@@ -137,19 +137,7 @@
 </div>
 </template>
 
-<script src="js/jquery-1.11.3.js"></script>
-<script>
-$("[data-trigger=r_head]").click(function(e){
-    e.preventDefault();
-    var $btn=$(this);
-    var $ul=$btn.next();
-    if ($ul.is(":hidden")) {
-        $ul.show();
-    } else {
-        $ul.hide();
-    }
-})
-</script>
+
 <script>
 
 export default {

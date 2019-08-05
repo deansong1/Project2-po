@@ -14,7 +14,9 @@
 .link ul li div:nth-child(2){
     text-align: center;
 }
-
+.mid ul{
+    padding: 0;
+}
 
 #r-mid{
     float:right;
@@ -48,6 +50,8 @@
     border-top:1px solid #ebebeb;
     padding: 20px 0;
 }
+.row ul{padding:0;}
+.electric h4{margin:20px;}
 @media(min-width:1440px){
     .link{
         width: 70%;
@@ -215,4 +219,5 @@
         line-height:57px;
         margin: 0 10px;
     }
+    
 }
