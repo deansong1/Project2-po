@@ -127,7 +127,6 @@
                         <img src="image/配件区/usb.png" class="pag2">
                         <h4>闪充电源适配器</h4>
                         <h5>¥79</h5>
-
                     </li>
                 </ul>
             </div>
