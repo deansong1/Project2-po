@@ -10,12 +10,20 @@
         </div>
         <div class="bot1">
         <div class="k3_img">
-            <img src="../assets/image/dtl.png" alt="">
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <img src="../assets/image/dtl.png" class="big1">
+            <div class="k3_small d-flex">
+                <div>
+                    <img src="../assets/det-img/d1.png" alt="">
+                </div>
+                <div>
+                    <img src="../assets/det-img/d2.png" alt="">
+                </div>
+                <div>
+                    <img src="../assets/det-img/d3.png" alt="">
+                </div>
+                <div>
+                    <img src="../assets/det-img/d4.png" alt="">
+                </div>
             </div>
         </div>
         <div class="k3_msg">
@@ -25,7 +33,7 @@
                 <span>￥1499</span>
                 <span>￥1599</span>
             </p>
-            <div>
+            <div class="line">
                 商品支持
                 <a href="">花呗分期 3 期免息</a>
                 <a href="">以旧换新</a>
@@ -34,6 +42,59 @@
             <section class="spec">
                 <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
                 <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
+            </section>
+            <p>颜色</p>
+            <section class="spec">
+                <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
+                <div><a href="#">星云紫</a></div>
+            </section>
+            <p>颜色</p>
+            <section class="spec">
+                <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
+                <div><a href="#">星云紫</a></div>
+            </section>
+            <div>加价购</div>
+            <section class="plus_area d-flex justify-content-center">
+               <div>
+                   <a href=""><img src="../assets/plus/plus1.png" alt=""></a>
+                   <p>VOOC移动电源</p>
+                   <div>
+                       <span></span>
+                       <span>￥239</span>
+                       <span>￥279</span>
+                       </div>
+                </div>
+               <div>
+                   <a href=""><img src="../assets/plus/plus2.png" alt=""></a>
+                   <p>VOOC移动电源</p>
+                   <div>
+                       <span></span>
+                       <span>￥239</span>
+                       <span>￥279</span>
+                       </div>
+                </div>
+               <div>
+                   <a href=""><img src="../assets/plus/plus3.png" alt=""></a>
+                   <p>VOOC移动电源</p>
+                   <div>
+                       <span></span>
+                       <span>￥239</span>
+                       <span>￥279</span>
+                       </div>
+                </div>
+               <div>
+                   <a href=""><img src="../assets/plus/plus4.png" alt=""></a>
+                   <p>VOOC移动电源</p>
+                   <div>
+                       <span></span>
+                       <span>￥239</span>
+                       <span>￥279</span>
+                       </div>
+                </div>
+            </section>
+            <p>选择数量</p>
+            <section>
+                <input type="text" value="1">
             </section>
         </div>
         </div>
@@ -66,17 +127,31 @@ export default {
     .t-k3 div{float:right;}
     .bot1{display: flex;}
     .k3_img{
-        display: flex;
+        
         width:50%; 
         padding: 60px 0 0 40px;
     }
-    .k3_img img{  
+    .k3_img .big1{  
         width:100%;
+    }
+    .k3_small{
+        justify-content: center;
+        margin:10px 0 0;
+
+    }
+    .k3_small img{
+        width: 80px;
+        height: 80px;
+        margin:0 10px;
     }
     .k3_msg{ 
         width:50%; 
         padding: 80px 40px 0 68px;
         }
+    .line{
+        border-bottom:1px solid #ebebeb;
+        padding: 0 0 20px;
+    }
     .spec div a{
         display: inline-block;
         border:1px solid #ebebeb;
@@ -89,5 +164,14 @@ export default {
         text-decoration: none;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    /* 加价区 */
+    .plus_area{
+        font-size:12px;
+        margin:10px 0 0;
+    }
+    .plus_area img{
+            width:66px;
+            height:60px;
     }
 </style>

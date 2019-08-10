@@ -9,7 +9,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {path:"/footer1", component:Footer},
-    {path:"/detail1", component:Detail},
+    {path:"/detail", component:Detail},
     {path:"/", component:Index},
     {path:"*", component:NotFound}
   ]
