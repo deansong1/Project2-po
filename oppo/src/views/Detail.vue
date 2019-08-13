@@ -40,20 +40,20 @@
             </div>
             <p>颜色</p>
             <section class="spec">
-                <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
-                <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
+                <div><a href="#">星云紫</a><a href="#">晨曦白</a></div>
+                <div><a href="#">电波蓝</a><a href="#">秘境黑</a></div>
             </section>
-            <p>颜色</p>
+            <p>配置</p>
             <section class="spec">
-                <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
-                <div><a href="#">星云紫</a></div>
+                <div><a href="#">6G+64G</a><a href="#">8G+128G</a></div>
+                <div><a href="#">8G+256G</a></div>
             </section>
-            <p>颜色</p>
+            <p>服务</p>
             <section class="spec">
-                <div><a href="#">星云紫</a><a href="#">星云紫</a></div>
-                <div><a href="#">星云紫</a></div>
+                <div><a href="#">延长保半年 ￥79</a><a href="#">延长保一年</a></div>
+                <div><a href="#">屏碎保一年 ￥129</a></div>
             </section>
-            <div>加价购</div>
+            <p>加价购</p>
             <section class="plus_area d-flex justify-content-center">
                <div>
                    <a href=""><img src="../assets/plus/plus1.png" alt=""></a>
@@ -92,12 +92,25 @@
                        </div>
                 </div>
             </section>
-            <p>选择数量</p>
-            <section>
-                <input type="text" value="1">
-            </section>
+            <div class="count">
+                <p>选择数量</p>
+                <section class="count1">
+                    <span class="btn">-</span>
+                    <input type="text" value="1">
+                    <span class="btn">+</span>
+                </section>
+            </div>
+            <div class="shopcar_btn">
+                <a href="">加入购物车</a>
+                <a href="">立即购买</a>
+            </div>
         </div>
         </div>
+        <div class="cell_spd">
+            <img src="../assets/image/detail1/cellcore.png" alt="">
+            <img src="../assets/image/detail1/cellcore.png" alt="">
+            <img src="../assets/image/detail1/cellcore.png" alt="">
+            </div>
     </div>  
 </div>
 </template>
@@ -148,9 +161,38 @@ export default {
         width:50%; 
         padding: 80px 40px 0 68px;
         }
+    .k3_msg p{ 
+        text-align:left;
+        }
+    .k3_msg p:first-child{
+        font-size:22px;
+        margin:0 0 7px;
+        color:#333;
+    }
+    .k3_msg p:nth-child(2){
+        font-size:14px;
+        margin:0 0 7px;
+        color:#666;
+    }
+    .k3_msg p:nth-child(3){
+        font-size:26px;
+        margin:0 0 20px;
+        color:#333;
+    }
+    .k3_msg p:nth-child(4){
+        font-size:14px;
+        margin:0 0 30px;
+        color:#333;
+    }
+    .k3_msg p:nth-child(5){
+        font-size:14px;
+        margin:30px 0 20px;
+        color:#666;
+    }
     .line{
         border-bottom:1px solid #ebebeb;
         padding: 0 0 20px;
+        text-align: left;
     }
     .spec div a{
         display: inline-block;
@@ -169,9 +211,57 @@ export default {
     .plus_area{
         font-size:12px;
         margin:10px 0 0;
+        
+    }
+    .plus_area div{
+           margin:0 10px;
     }
     .plus_area img{
             width:66px;
             height:60px;
+   
     }
+     /* 选择数量 */
+    .count{
+        border-bottom:1px solid #ebebeb;
+        padding-bottom:20px;
+    }
+    .count p{
+        margin:30px 0 20px;
+    }
+    
+    .count1 input{
+        height: 30px;
+    }
+    .count1 span{
+        display: inline-block;
+        width: 31px;height: 31px;
+        border:2px solid #ebebeb;
+        line-height:30px;
+    }
+    /* 付款按钮 */
+    .shopcar_btn{
+        display:flex;
+        margin:20px 0;
+        }
+    .shopcar_btn a{
+        display: inline-block;
+        width: 196px;
+        height: 60px;
+        line-height:60px;
+        margin:20px;
+        border-radius:5px;
+    }
+    .shopcar_btn a:first-child{
+        color:#666;
+        background:#f4f4f4;
+    }
+    .shopcar_btn a:last-child{
+        color:#fff;
+        background:#05b570;
+    }
+/* 图片详情 */
+.cell_spd img{
+    width:100%;
+}
 </style>
