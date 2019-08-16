@@ -8,7 +8,7 @@
             <div></div>
         </span>
         <div class="head_mid">
-            <ul>
+            <ul class="ml-4">
                 <li>
                     <a href="javascript:;">Find系列</a>
                     <ul class="navishow">

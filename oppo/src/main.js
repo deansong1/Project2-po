@@ -10,7 +10,6 @@ import Footer from './components/Footer'
 Vue.component("header1",Header);
 Vue.component("footer1",Footer);
 
-
 Vue.prototype.axios=axios;
 Vue.config.productionTip = false
 

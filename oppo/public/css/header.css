@@ -16,10 +16,12 @@
 .head>span>div{display: none;}
 .head_mid{margin:0 auto;}
 .head_mid>ul{
+   
     width: 800px;height: 60px;
     display:flex;
     justify-content: center;
-    position:relative;
+    position:relative; 
+    
 }
 .head_mid>ul>li{
     font-size: 14px;
