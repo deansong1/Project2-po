@@ -11,26 +11,26 @@
             </div>
         </div>
         <div class="bot1">
-        <div class="k3_img">
-            <img :src="'http://127.0.0.1:5050/'+url.pimg_url" class="big1">
-            <div class="k3_small d-flex" >
-                <div v-for="(item,i) of list" :key="i">
-                    <img :src="'http://127.0.0.1:5050/'+item.pimg_url" :data-target="'http://127.0.0.1:5050/'+item.pimg_url" :class="{big2:big}"
+        <div class="k3_img"  v-if="url.length>0">
+            <img :src="'http://127.0.0.1:3000/'+url[0].pimg_url" class="big1">
+            <div class="k3_small d-flex">
+                 <div>
+                    <img :src="'http://127.0.0.1:3000/'+url[0].pimg_url" :data-target="'http://127.0.0.1:3000/'+url[0].pimg_url" :class="{big2:big}"
                     @click="change">
                 </div>
-                <!-- <div>
-                    <img src="../assets/det-img/d2.png"
-                    data-target="../assets/det-img/d2.png"   :class="{big2:big}"
-                    >
+                 <div>
+                    <img :src="'http://127.0.0.1:3000/'+url[1].pimg_url"
+                    :data-target="'http://127.0.0.1:3000/'+url[1].pimg_url" :class="{big2:big}"
+                     @click="change">
                 </div>
                 <div>
-                    <img src="../assets/det-img/d3.png" 
-                    data-target="../assets/det-img/d3.png" :class="{big2:big}">
+                    <img :src="'http://127.0.0.1:3000/'+url[2].pimg_url"
+                    :data-target="'http://127.0.0.1:3000/'+url[2].pimg_url" :class="{big2:big}" @click="change">
                 </div>
                 <div>
-                    <img src="../assets/det-img/d4.png"
-                    data-target="../assets/det-img/d4.png"  :class="{big2:big}">
-                </div> -->
+                    <img :src="'http://127.0.0.1:3000/'+url[3].pimg_url"
+                    :data-target="'http://127.0.0.1:3000/'+url[3].pimg_url" :class="{big2:big}" @click="change">
+                </div> 
             </div>
         </div>
         <div class="k3_msg">
@@ -38,7 +38,7 @@
             <p class="colors"><span>【新配色 | 享 3期免息】</span>骁龙710，VOOC 3.0，光感屏幕指纹。<span>K1热卖中 >>></span></p>
             <p>
                 <span>￥1499</span>
-                <span>￥1599</span>
+                <span class="color1">￥1599</span>
             </p>
             <div class="line">
                 商品支持
@@ -47,7 +47,7 @@
             </div>
             <p>颜色</p>
             <section class="spec">
-                <div><a href="#">星云紫</a><a href="#">晨曦白</a></div>
+                <div><a href="#" class="starc">星云紫</a><a href="#">晨曦白</a></div>
                 <div><a href="#">电波蓝</a><a href="#">秘境黑</a></div>
             </section>
             <p>配置</p>
@@ -61,55 +61,81 @@
                 <div><a href="#">屏碎保一年 ￥129</a></div>
             </section>
             <p>加价购</p>
-            <section class="plus_area d-flex justify-content-center">
-               <div>
-                   <a href=""><img src="../assets/plus/plus1.png" alt=""></a>
-                   <p>VOOC移动电源</p>
+            <div class="d-flex discount" v-if="plus1.length>0">
+            <div><img src="../assets/image/箭头左.png" @click="move(-1)" :class="{disabled:left}"></div>
+            <section class="plus_area d-flex justify-content-between"> 
+                <!-- /* v-for="(item,i) of plus1" :key="i" */ -->
+            <div class="move1" :style="divStyle">
+                 <div>
+                   <a href=""><img :src="'http://127.0.0.1:3000/'+plus1[0].jimg_url" alt=""></a>
+                   <p v-text="plus1[0].jtitle"></p>
                    <div>
                        <span></span>
-                       <span>￥239</span>
+                       <span>{{"￥"+plus1[0].jprice}}</span>
+                       <span>￥279</span>
+                    </div>
+                </div>
+               <div>
+                   <a href=""><img :src="'http://127.0.0.1:3000/'+plus1[1].jimg_url" alt=""></a>
+                   <p v-text="plus1[1].jtitle"></p>
+                   <div>
+                       <span></span>
+                       <span>{{"￥"+plus1[1].jprice}}</span>
+                       <span>￥279</span>
+                    </div>
+                </div>
+               <div>
+                   <a href=""><img :src="'http://127.0.0.1:3000/'+plus1[2].jimg_url" alt=""></a>
+                   <p v-text="plus1[2].jtitle" class="text-center"></p>
+                   <div>
+                       <span></span>
+                       <span>{{"￥"+plus1[2].jprice}}</span>
                        <span>￥279</span>
                        </div>
                 </div>
                <div>
-                   <a href=""><img src="../assets/plus/plus2.png" alt=""></a>
-                   <p>VOOC移动电源</p>
+                   <a href=""><img :src="'http://127.0.0.1:3000/'+plus1[3].jimg_url" alt=""></a>
+                   <p v-text="plus1[3].jtitle"></p>
                    <div>
                        <span></span>
-                       <span>￥239</span>
+                       <span>{{"￥"+plus1[3].jprice}}</span>
                        <span>￥279</span>
-                       </div>
-                </div>
+                    </div>
+               </div>
                <div>
-                   <a href=""><img src="../assets/plus/plus3.png" alt=""></a>
-                   <p>VOOC移动电源</p>
+                   <a href=""><img :src="'http://127.0.0.1:3000/'+plus1[4].jimg_url" alt=""></a>
+                   <p v-text="plus1[4].jtitle"></p>
                    <div>
                        <span></span>
-                       <span>￥239</span>
+                       <span v-cloak>{{"￥"+plus1[4].jprice}}</span>
                        <span>￥279</span>
-                       </div>
+                    </div>
                 </div>
-               <div>
-                   <a href=""><img src="../assets/plus/plus4.png" alt=""></a>
-                   <p>VOOC移动电源</p>
+                <div>
+                   <a href=""><img :src="'http://127.0.0.1:3000/'+plus1[5].jimg_url" alt=""></a>
+                   <p v-text="plus1[5].jtitle"></p>
                    <div>
                        <span></span>
-                       <span>￥239</span>
+                       <span>{{"￥"+plus1[5].jprice}}</span>
                        <span>￥279</span>
-                       </div>
-                </div>
+                    </div>
+               </div>
+            </div>   
             </section>
+            <div><img src="../assets/image/箭头右.png" @click="move(+1)" :class="{disabled:right}"></div>
+            </div>
             <div class="count">
                 <p>选择数量</p>
                 <section class="count1">
-                    <span class="btn">-</span>
-                    <input type="text" value="1">
-                    <span class="btn">+</span>
+                    <span class="btn" @click="minus">-</span>
+                    <input type="text" value="1" class="text-center" v-model="sum">
+                    <span class="btn"  @click="plus">+</span>
                 </section>
             </div>
             <div class="shopcar_btn">
                 <a href="">加入购物车</a>
-                <a href="">立即购买</a>
+                <a href="javascript:;" @click="purchase"
+                >立即购买</a>
             </div>
         </div>
         </div>
@@ -132,53 +158,103 @@
 export default {
     data(){
         return{
-           big:true, 
+           big:true,
            url:"" ,
-           list:[], 
-        }
+           plus1:[],
+           list:[],
+           sum:1,
+           divStyle:{//控制div的样式
+               "margin-left":0,//绑定margin-left
+                width:0,        //绑定margin-left
+                height:"140px",
+                "font-size":"12px",
+               },
+           times:0,  //记录移动的次数 
+           }
     },
+    computed:{ 
+            left(){
+                if(this.times==0){
+                    
+                }
+            }, //左边按钮从一开始就禁用
+            right(){
+                return this.plus1.length<=4||this.times==this.plus1.length-4
+            }  //右边按钮从一开始就禁用
+           },
     created(){
+        //页面加载时，发送一次请求，初始化data的数据
         this.load();
-        this.load2();
     },
+    watch:{  //监控
+            times(){
+                this.divStyle["margin-left"]
+                =-this.times*110+"px"
+            },
+            plus1(){
+                 this.divStyle.width=this.plus1.length*110+"px"    
+            },
+        },
     methods:{
+        move(i){
+                this.times+=i;
+                if (this.times<0) {
+                    this.times=0
+                } else if(this.times>this.plus1.length-4){
+                    this.times=this.plus1.length-4
+                }
+        },
         load(){
-            var url="http://localhost:5050/details/details";
-            var obj={pid:1};
-            this.axios.get(url,{params:obj}).then(res=>{
-                this.list=res.data.data;
-                console.log(this.list);
-            })
-        },
-        load2(){
-            var url="http://localhost:5050/details/details";
-            var obj={pid:1};
-            this.axios.get(url,{params:obj}).then(res=>{
-                this.url=res.data.data[0];
+            var url="details/details";
+            this.axios.get(url).then(res=>{
+                this.url=res.data.det;
+                this.plus1=res.data.plus;
                 console.log(this.url);
+                console.log(this.plus1);
             })
         },
-        change(){
-        if(this.big==true){
-            var big2=document.querySelector("img.big2");
-            var big1=document.querySelector("img.big1");    
-            big1.setAttribute("src",require(big2.getAttribute('data-target')));
-            }
+        change(e){
+            var big2=e.target.dataset.target;
+            var big1=document.querySelector("img.big1");
+            var b=big1.setAttribute("src",big2);
+            console.log(big2)
+            var c=e.target.dataset;
+            console.log(c);  
          },
-        // change1(){
-        // if(this.big==true){
-        //     var big1=document.querySelector("img.big1"); 
-        //     big1.setAttribute("src",require("../assets/det-img/d2.png"));
-        //     }
-        //  },
-
+       
+        purchase(){
+            var rid=rid;
+            var url="Isreg"
+            var obj={rid:rid};
+            this.axios.get(url,{params:obj}).then(res=>{
+                //3.1:如果-1提示用户登录
+                if(res.data.code == -1){
+                    this.$toast("请先登录");
+                }else if(res.data.code == 1){
+                    this.$router.push("/");
+                }
+            })
+        },
+        minus(e){
+        if (this.sum>1) {
+                var sum1=this.sum--;
+                e.target.value=sum1;
+            }
+        },
+        plus(e){
+            if (this.sum<10) {
+                var sum1=this.sum++;
+                e.target.value=sum1;
+            } 
+        },
     }
 }
 </script>
 
 <style scoped>
-    *{margin:0;padding: 0;}
+*{margin:0;padding: 0;}
 @media(min-width:1440px){
+    
     #bor-der{
         border-top:1px solid #ebebeb;
         height:3250px;
@@ -208,6 +284,10 @@ export default {
     .colors span{
         color:#f79a47;
     }
+    .k3_msg span.color1{
+        font-size: 17px;
+        text-decoration:line-through;
+    }
     .k3_img{
         width:50%; 
         padding: 50px 0 0 40px;
@@ -227,6 +307,7 @@ export default {
         width: 80px;
         height: 80px;
         margin:0 10px;
+        cursor:pointer;
     }
     .k3_msg{ 
         width:50%; 
@@ -282,14 +363,48 @@ export default {
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
+    .spec .starc{
+        border:1px solid  rgba(129,205,177,1);
+    }
+    .spec div a:hover{
+        border:1px solid  rgba(129,205,177,1);
+    }
+    
     /* 加价区 */
-    .plus_area{
+    .discount>div{/*垂直居中必须写在被应用元素的父元素上*/
+        width: 30px;
+        height: 150px; 
+        display:flex;
+        align-items:center;/*垂直居中*/
+        justify-content: center;/*水平居中*/
+    }
+    .discount>div>img{
+        width: 30px;
+        height: 30px;
+        cursor:pointer;
+    }
+    section.plus_area{
+        width:415px;
+        height: 149px;
         font-size:12px;
-        margin:10px 0 0;
-        
+        margin:10px 60px 0;
+        overflow: hidden;
+    }
+    div.move1{
+        display:flex;
+    }
+    div.move1>div p{
+        margin:10px 0 0 !important;
+    }
+    div.move1>div>div{
+        margin:0 !important;
     }
     .plus_area div{
+           width: 85px;
            margin:0 10px;
+    }
+    .plus_area>div>div span:nth-child(3){
+        text-decoration: line-through;
     }
     .plus_area img{
             width:66px;
@@ -314,6 +429,7 @@ export default {
         border:2px solid #ebebeb;
         line-height:30px;
     }
+    
     /* 付款按钮 */
     .shopcar_btn{
         display:flex;

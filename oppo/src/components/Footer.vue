@@ -7,7 +7,7 @@
                 <li>
                     <a href="">
                         <div>
-                            <img class="img-fluid" src="image/images/link1.png" alt="">
+                            <img class="img-fluid" src="../assets/image/images/link1.png" alt="">
                         </div>
                         <div>1 年全国联保</div>
                     </a>
@@ -15,7 +15,7 @@
                 <li>
                 <a href="">
                     <div>
-                        <img class="img-fluid" src="image/images/link1.png" alt="">
+                        <img class="img-fluid" src="../assets/image/images/link1.png" alt="">
                     </div>
                     <div>7 天退货保障</div>
                 </a>
@@ -23,7 +23,7 @@
                 <li>
                     <a href="">
                         <div>
-                        <img class="img-fluid" src="image/images/link1.png" alt="">
+                        <img class="img-fluid" src="../assets/image/images/link1.png" alt="">
                         </div>
                         <div>30 天换货保障</div>
                     </a>
@@ -31,7 +31,7 @@
                 <li>
                     <a href="">
                         <div>
-                        <img class="img-fluid" src="image/images/link1.png" alt="">
+                        <img class="img-fluid" src="../assets/image/images/link1.png" alt="">
                         </div>
                         <div>全场包邮</div>
                     </a>
@@ -39,7 +39,7 @@
                 <li>
                     <a href="">
                         <div>
-                        <img class="img-fluid" src="image/images/link1.png" alt="">
+                        <img class="img-fluid" src="../assets/image/images/link1.png" alt="">
                         </div>
                         <div>900家售后网点</div>
                     </a>
@@ -47,7 +47,7 @@
                 <li>
                     <a href="">
                         <div>
-                        <img class="img-fluid" src="image/images/link1.png" alt="">
+                        <img class="img-fluid" src="../assets/image/images/link1.png" alt="">
                         </div>
                         <div>正品保障</div>
                     </a>

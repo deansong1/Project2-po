@@ -1,23 +1,53 @@
-//使用express构建web服务器 --11:25
-const express = require('express');
-const bodyParser = require('body-parser');
+//vue_server_00/app.js node程序
+//1:加载第三方模块
+//web服务器
+const express = require("express");
+//mysql驱动
+const mysql = require("mysql");
+//跨域
+const cors = require("cors");
+//session
+const session = require("express-session");
+
 const index=require("./routes/index");
 const details=require("./routes/details");
-const cors=require("cors");
-/*引入路由模块*/
+const logins=require("./routes/logins");
+const reg=require("./routes/reg");
+const Isreg=require('./routes/purchase');
+const carl=require('./routes/carousel');
+//2:配置数据库连接池:提高数据效率
+var pool = mysql.createPool({
+   host:"127.0.0.1",  //数据库地址
+   user:"root",       //数据库用户名
+   password:"",       //数据库密码
+   port:3306,         //数据库端口
+   database:"oppo",     //数据库名称
+   connectionLimit:15 //连接数量
+});
 
-var app = express();
-var server = app.listen(5050);//部署新浪云，硬性要求必须监听5050端口
-app.use(cors({
-  origin:"http://localhost:8080"//不能用*
-}));//从此所有响应，自动带Access-Control-Allow-Origin:http://   127.0.0.1:5500
-//万一客户端浏览器地址发生变化，只改这里origin一处即可！
-//使用body-parser中间件
-app.use(bodyParser.urlencoded({extended:false}));
-//托管静态资源到public目录下
-app.use(express.static('public'));
-/*使用路由器来管理路由*/
-app.use("/index",index);
-app.use("/details",details);
+var server = express();
+//3:配置跨域模块 50
+server.use(cors({
+//   //允许跨域访问程序地址列表
+   origin:["http://127.0.0.1:8080",
+   "http://localhost:8080"],
+   credentials:true //请求验证
+}))
+//4:配置session模块
+server.use(session({
+ secret:"128位字符串",  //安全字符串
+ resave:true,          //请求时更新数据
+ saveUninitialized:true//保存初始数据
+}));
+//4.1:配置项目静态目录
+server.use(express.static("public"));
+//http://127.0.0.1:3000/01.jpg
+//5:启动监听3000
+server.listen(3000);
 
-
+server.use("/index",index);
+server.use("/details",details);
+server.use("/logins",logins);
+server.use("/reg",reg);
+server.use("/Isreg",Isreg);
+server.use("/carl",carl);

@@ -4,7 +4,7 @@
       <div class="left"></div>
     <div class="head">
         <span>
-            <a href="">oppo</a>
+            <router-link to="/">oppo</router-link> 
             <div></div>
         </span>
         <div class="head_mid">
@@ -14,12 +14,12 @@
                     <ul class="navishow">
                         <li>
                             <a href="">
-                            <img src="image/1.png" alt="">
+                            <img src="../assets/image/1.png" alt="">
                             <h3>Find x</h3>
                             </a>
                         </li>
-                        <li><a href=""><img src="image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
-                        <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
+                        <li><a href=""><img src="../assets/image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
+                        <li><a href=""><img src="../assets/image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
                     </ul>
                 </li>
                 <li>
@@ -27,11 +27,11 @@
                     <ul class="navishow">
                         <li>
                             <a href="">
-                            <img src="image/1.png" alt="">
+                            <img src="../assets/image/1.png" alt="">
                             <h3>Reno 10</h3>
                             </a>
                         </li>
-                        <li><a href=""><img src="image/2.png" alt=""><h3>Reno z</h3></a></li>
+                        <li><a href=""><img src="../assets/image/2.png" alt=""><h3>Reno z</h3></a></li>
                         
                     </ul>
                 </li>
@@ -40,19 +40,19 @@
                     <ul class="navishow">
                             <li>
                                 <a href="">
-                                <img src="image/1.png" alt="">
+                                <img src="../assets/image/1.png" alt="">
                                 <h3>R 17</h3>
                                 </a>
                             </li>
-                            <li><a href=""><img src="image/2.png" alt=""><h3>R17 PRO</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>R15 X</h3></a></li>
+                            <li><a href=""><img src="../assets/image/2.png" alt=""><h3>R17 PRO</h3></a></li>
+                            <li><a href=""><img src="../assets/image/3.png" alt=""><h3>R15 X</h3></a></li>
                         </ul>
                 </li>
                 <li>
                     <a href="">A系列</a>
                     <ul class="navishow">
-                            <li><a href=""><img src="image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
+                            <li><a href=""><img src="../assets/image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
+                            <li><a href=""><img src="../assets/image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
                         </ul>
                 </li>
                 <li>
@@ -60,13 +60,13 @@
                     <ul class="navishow">
                             <li>
                                 <a href="">
-                                <img src="image/1.png" alt="">
+                                <img src="../assets/image/1.png" alt="">
                                 <h3>K3</h3>
                                 </a>
                             </li>
-                            <li><a href=""><img src="image/2.png" alt=""><h3>K1</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find M</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
+                            <li><a href=""><img src="../assets/image/2.png" alt=""><h3>K1</h3></a></li>
+                            <li><a href=""><img src="../assets/image/3.png" alt=""><h3>Find M</h3></a></li>
+                            <li><a href=""><img src="../assets/image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
                         </ul>
                 </li>
                 <li>
@@ -74,16 +74,16 @@
                     <ul class="navishow">
                             <li>
                                 <a href="">
-                                <img src="image/1.png" alt="">
+                                <img src="../assets/image/1.png" alt="">
                                 <h3>Find x</h3>
                                 </a>
                             </li>
-                            <li><a href=""><img src="image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
-                            <li><a href=""><img src="image/3.png" alt=""><h3>Find</h3></a></li>
+                            <li><a href=""><img src="../assets/image/2.png" alt=""><h3>Find 超闪版</h3></a></li>
+                            <li><a href=""><img src="../assets/image/3.png" alt=""><h3>Find 兰博基尼版</h3></a></li>
+                            <li><a href=""><img src="../assets/image/3.png" alt=""><h3>Find</h3></a></li>
                             <li>
                                     <a href="">
-                                    <img src="image/1.png" alt="">
+                                    <img src="../assets/image/1.png" alt="">
                                     <h3>Find x</h3>
                                     </a>
                             </li>
@@ -103,7 +103,7 @@
                 <hr>
                 <li><a href="javascript:;">个人中心</a></li>
                 <hr>
-                <li><a href="javascript:;">登录</a></li>
+                <li><router-link to="/logins">登录</router-link></li>
             </ul>
         </div>
     </div>

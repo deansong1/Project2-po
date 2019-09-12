@@ -21,6 +21,7 @@
     justify-content: center;
     position:relative;
     padding: 0;
+    z-index: 11;
 }
 .head_mid>ul>li{
     font-size: 14px;
@@ -40,6 +41,7 @@
     border-radius: 3px;
     margin-top:16px;
     position: relative;
+    cursor: pointer;
 }
 .r_head>a{
     display:block;
@@ -60,6 +62,7 @@
     line-height: 60px;
     padding: 0;
     background:#fff;
+    z-index: 11;
 }
 .r_head ul hr{margin:0;}
 .r_head>ul a{
@@ -68,6 +71,7 @@
     font-weight:bold;
     color:#333;
 }
+
 @media(min-width:1440px){
     .head{
         width: 75%;
