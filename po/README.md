@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # xzvue
 
 ## Project setup
@@ -28,7 +27,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# Project2-po
-Vue版手机商城
->>>>>>> 1597108047728c6d4619b6cdf39e5821dba9909e
